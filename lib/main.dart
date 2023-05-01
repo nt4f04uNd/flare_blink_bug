@@ -20,7 +20,7 @@ class flare_blink_bug extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -59,22 +59,22 @@ class _MyHomePageState extends State<MyHomePage> {
 const double _kIconSize = 22.0;
 
 class AnimatedPlayPauseButton extends StatefulWidget {
-  AnimatedPlayPauseButton({Key key, this.iconSize, this.size, this.iconColor})
+  AnimatedPlayPauseButton({Key? key, this.iconSize, this.size, this.iconColor})
       : super(key: key);
 
-  final double iconSize;
-  final double size;
-  final Color iconColor;
+  final double? iconSize;
+  final double? size;
+  final Color? iconColor;
 
   AnimatedPlayPauseButtonState createState() => AnimatedPlayPauseButtonState();
 }
 
 class AnimatedPlayPauseButtonState extends State<AnimatedPlayPauseButton>
     with TickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
   bool playing = false;
 
-  String _flareAnimation;
+  String? _flareAnimation;
   set animation(String value) {
     setState(() {
       _flareAnimation = value;
